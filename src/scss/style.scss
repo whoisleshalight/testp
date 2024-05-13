@@ -187,7 +187,21 @@ body {
 
 // Підключення стилів окремих сторінок
 @import "home";
-.gsap-marker-end {
-}
-.gsap-marker-start {
-}
+
+
+
+ @media (max-width: toEm(1280)){
+	.reviews__title div {	
+		gap: toRem(20) !important;
+		position: relative; 
+		animation: marquee 15s linear infinite;
+	 }
+	 
+	
+	 @keyframes marquee {
+		0% { left: 0; }
+		50% { left: -40%; }
+		100% { left: 0; }
+	 }
+	 
+ }
