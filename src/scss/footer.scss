@@ -1,0 +1,272 @@
+//====================================================================================================
+.footer {
+	// background: url("@img/home/01.jpg") center bottom / cover no-repeat;
+	overflow: hidden;
+	position: relative;
+
+	padding-top: toRem(138);
+	padding-bottom: toRem(80);
+	@media (max-width: toEm(1648)) {
+		padding-bottom: toRem(100);
+		padding-top: toRem(100);
+	}
+	@media (max-width: toEm(1280)) {
+		padding-top: toRem(76);
+		@include adaptiveValue("padding-bottom", 100, 50, 0, 1280, 480);
+	}
+	@media (max-width: toEm(767.98)) {
+		padding-top: toRem(60);
+	}
+	&__container {
+	}
+
+	&__top {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__bottom {
+		position: relative;
+		z-index: 2;
+	}
+}
+.top-footer {
+	&__info {
+		font-family: "FoundationSansBlack";
+		&:not(:last-child) {
+			margin-bottom: toRem(66);
+			@media (max-width: toEm(1648)) {
+				margin-bottom: toRem(55);
+			}
+			@media (max-width: toEm(767.98)) {
+				margin-bottom: toRem(50);
+			}
+		}
+		display: flex;
+		@media (max-width: toEm(1280)) {
+			flex-direction: column;
+			max-width: toRem(646);
+			p {
+				margin-top: toRem(0) !important;
+				text-align: left !important;
+			}
+		}
+		p {
+			font-size: toRem(132);
+			@media (max-width: toEm(1648)) {
+				font-size: toRem(80);
+			}
+			@media (max-width: toEm(1280)) {
+				font-size: toRem(60);
+			}
+			@media (max-width: toEm(767.98)) {
+				font-size: toRem(37);
+			}
+			color: $mainColor;
+			text-transform: uppercase;
+			&:last-child {
+				text-align: right;
+				margin-top: toRem(130);
+			}
+		}
+	}
+
+	&__callback {
+	}
+}
+.callback-top-footer {
+	padding: toRem(0) toRem(2);
+	max-width: toRem(442);
+	margin-bottom: toRem(302);
+	@media (max-width: toEm(1648)) {
+		margin-bottom: toRem(202);
+	}
+	@media (max-width: toEm(1280)) {
+		margin-bottom: toRem(158);
+	}
+	@media (max-width: toEm(767.98)) {
+		margin-bottom: toRem(140);
+	}
+	&__title {
+		color: $lightColorOne;
+		text-align: justify;
+		display: inline;
+		line-height: 110%;
+		font-size: toRem(18);
+		@media (max-width: toEm(1648)) {
+			font-size: toRem(14);
+		}
+		text-transform: uppercase;
+		@media (min-width: toEm(1280)) {
+			margin-left: toRem(186);
+			font-weight: 700;
+		}
+	}
+
+	&__form {
+		margin-top: toRem(87);
+		@media (max-width: toEm(1648)) {
+			margin-top: toRem(70);
+		}
+	}
+}
+.form {
+	&__item {
+	}
+}
+.input {
+}
+.button {
+}
+
+.bottom-footer {
+	&__body {
+		display: flex;
+
+		&:not(:last-child) {
+			margin-bottom: toRem(32);
+			@media (max-width: toEm(1280)) {
+				margin-bottom: toRem(16);
+			}
+			@media (max-width: toEm(767.98)) {
+				margin-bottom: toRem(30);
+			}
+		}
+		@media (max-width: toEm(575.98)) {
+			flex-direction: column;
+		}
+	}
+
+	&__logo {
+		font-family: "FoundationSansOutline";
+
+		font-size: toRem(22);
+		color: $mainColor;
+		text-transform: uppercase;
+
+		margin-right: toRem(374);
+		@media (max-width: toEm(1280)) {
+			margin-right: 130px;
+		}
+		@media (max-width: toEm(575.98)) {
+			order: 1;
+		}
+	}
+
+	&__nav {
+		flex: 1 1 auto;
+		@media (max-width: toEm(575.98)) {
+			order: 3;
+		}
+		@media (min-width: toEm(575.98)) {
+			min-height: toRem(230);
+		}
+	}
+
+	&__nav-list {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(15);
+		@media (max-width: toEm(1648)) {
+			gap: toRem(10);
+		}
+		@media (max-width: toEm(1280)) {
+			@include adaptiveValue("gap", 10, 5, 0, 1280, 480);
+		}
+		li {
+			a {
+				color: $lightColorTwo;
+				font-size: toRem(16);
+				@media (max-width: toEm(1648)) {
+					font-size: toRem(14);
+				}
+				font-family: "Inter";
+				text-transform: uppercase;
+				font-weight: 500;
+				@media (max-width: toEm(1280)) {
+					@include adaptiveValue("font-size", 14, 12, 0, 1280, 480);
+				}
+			}
+		}
+	}
+
+	&__nav-item {
+	}
+
+	&__social {
+		@media (max-width: toEm(575.98)) {
+			order: 2;
+		}
+		display: flex;
+		flex-direction: column;
+		gap: toRem(17);
+		@media (max-width: toEm(1648)) {
+			gap: toRem(5);
+		}
+		@media (min-width: toEm(575.98)) {
+			align-items: flex-end;
+		}
+		@media (max-width: toEm(575.98)) {
+			margin-top: toRem(54);
+			margin-bottom: toRem(46);
+		}
+		a {
+			font-family: "FoundationSansBlack";
+			transition: all 0.4s;
+			font-size: toRem(30);
+			font-size: toRem(30);
+			@media (max-width: toEm(1648)) {
+				font-size: toRem(20);
+			}
+			color: $lightColorOne;
+			text-transform: uppercase;
+			@media (max-width: toEm(1280)) {
+				@include adaptiveValue("font-size", 20, 10, 0, 1280, 480);
+			}
+		}
+	}
+
+	&__copyright {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width: toEm(1280)) {
+			@include adaptiveValue("gap", 10, 5, 0, 1280, 480);
+		}
+		@media (max-width: toEm(575.98)) {
+			flex-direction: column-reverse;
+			align-items: flex-start;
+			gap: toRem(20);
+		}
+	}
+
+	&__main {
+		color: $grayColor;
+	}
+
+	&__by {
+		color: $mainColor;
+		font-size: toRem(16);
+		@media (max-width: toEm(1648)) {
+			font-size: toRem(14);
+		}
+		@media (max-width: toEm(1280)) {
+			text-decoration: underline;
+			@include adaptiveValue("font-size", 14, 12, 0, 1280, 480);
+		}
+	}
+}
+
+//====================================================================================================
+.footer__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

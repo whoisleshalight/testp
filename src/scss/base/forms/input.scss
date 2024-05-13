@@ -1,0 +1,85 @@
+//<INPUT>
+// Сніппет (HTML): inp
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+}
+.input {
+	padding-top: toRem(10);
+	padding-bottom: toRem(10);
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	caret-color: inherit;
+	font-size: toRem(18);
+	color: #fff;
+	&._form-focus {
+	}
+	&._form-error {
+	}
+}
+.input[placeholder]:not([data-placeholder-nohiden]) {
+	&::placeholder {
+		transition: all 0.4s;
+		color: $grayColor;
+	}
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+textarea.input {
+	resize: none;
+	padding: 0px 0px;
+}
+.form {
+	button {
+		margin-top: toRem(64);
+		@include adaptiveValue("margin-top", 64, 46, 0, 1920, 1280);
+		@media (max-width: toEm(1280)) {
+			margin-top: toRem(51);
+		}
+	}
+}
+.form__item {
+	position: relative;
+	&:not(:last-child) {
+		margin-bottom: toRem(14);
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		height: 1px;
+		width: 100%;
+		left: 0;
+		width: 100%;
+		background-color: $grayColor;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		height: 1px;
+		left: 0;
+		z-index: 2;
+		width: 0%;
+		transition: all 0.4s;
+		background-color: $redColor;
+	}
+	&._form-error {
+		&::after {
+			width: 100%;
+		}
+		.input[placeholder]:not([data-placeholder-nohiden]) {
+			&::placeholder {
+				color: $redColor;
+			}
+		}
+	}
+}

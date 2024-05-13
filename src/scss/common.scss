@@ -1,0 +1,799 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+.page {
+	margin-top: toRem(-100);
+}
+
+._bg {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transition: all 0.4s;
+		height: 100%;
+		pointer-events: none;
+		z-index: 2;
+		background: url("@img/bg.svg") 0 0;
+		background-position: center top;
+		background-size: toRem(147);
+		@media (max-width: toEm(1648)) {
+			background-size: toRem(97);
+		}
+		@media (max-width: toEm(1280)) {
+			background-size: toRem(69);
+		}
+		@media (max-width: toEm(767.98)) {
+			background-size: toRem(60);
+		}
+	}
+}
+.menu._bg {
+	@media (min-width: toEm(1280)) {
+		&::before {
+			display: none;
+		}
+	}
+}
+.loader__info span {
+	animation: load 0.8s infinite linear;
+}
+@keyframes load {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.loader {
+	pointer-events: none;
+@media (min-width:toEm(767.98)){
+	transition: top ease-in-out 0.4s 0.6s;
+
+}
+@media (max-width: toEm(767.98)){
+	  transition: all 0.4s;
+}
+	.loaded & {
+		@media (min-width:toEm(767.98)){
+			top: -100%;
+			.loader__line {
+				transform: translateY(100%);
+				opacity: 0;
+			}
+		}
+		@media (max-width: toEm(767.98)){
+			  opacity: 0;visibility: hidden;
+		}
+		
+	}
+
+	font-family: "FoundationSansBlack";
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: $darkColorTwo;
+	z-index: 99999;
+	display: flex;
+	flex-direction: column;
+
+	&__container {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: flex-end;
+		padding-bottom: toRem(115);
+		justify-content: space-between;
+		width: 100%;
+		@media (max-width: toEm(1920)){
+			padding-bottom: toRem(33);
+	 }
+	 @media (max-width: toEm(1280)){
+		padding-bottom: toRem(64) !important;
+	}
+	}
+
+	&__info {
+		font-weight: 700;
+		font-size: toRem(40);
+		gap: toRem(42);
+		display: flex;
+		align-items: center;
+		gap: toRem(20);
+		letter-spacing: -2%;
+		position: relative;
+		padding-bottom: toRem(42);
+		margin-bottom: toRem(32);
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: $lightColorThree;
+		}
+		@media (max-width: toEm(1920)){
+			font-size: toRem(30);
+			margin-bottom: toRem(20);
+	 }
+	 @media (max-width: toEm(1280)){
+		font-size: toRem(20);padding-bottom: toRem(20);margin-bottom: toRem(6);
+	 }
+	 @media (max-width: toEm(767.98)){
+		font-size: toRem(16);margin-bottom: toRem(0);
+		padding-bottom: toRem(10);
+  }
+	}
+
+	&__counter {
+		font-weight: 900;
+		font-size: toRem(190);
+		@media (max-width: toEm(1920)){
+			  font-size: toRem(120);
+		}
+		@media (max-width: toEm(1280)){
+			  font-size: toRem(60);
+		}
+		@media (max-width: toEm(767.98)){
+			font-size: toRem(40);
+	  }
+	}
+
+	&__line {
+		position: relative;
+		z-index: 2;
+		div {
+			animation: text 40s infinite linear;
+		}
+
+		transition: transform 0.4s ease 0s, opacity 0.4s ease 0.4s;
+		padding-top: toRem(44);
+		padding-bottom: toRem(44);
+		background-color: $lightColorThree;
+		color: $darkColorThree;
+		font-size: toRem(130);
+		font-family: "FoundationSansBlack";
+		display: flex;
+		gap: toRem(60);
+
+		div {
+			display: flex;
+			align-items: center;
+			gap: toRem(60);
+
+			span {
+				white-space: nowrap;
+				// &:first-child {
+				position: relative;
+				padding-right: toRem(60);
+					@media (max-width: toEm(767.98)){
+						  padding-right: toRem(30);
+					}
+				&::after {
+					content: "";
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: 9px;
+					height: 100%;
+					background-color: $darkColorThree;
+				}
+
+				// }
+			}
+			@media (max-width: toEm(767.98)){
+				  gap: toRem(20);
+			}
+		}
+		@media (max-width: toEm(1920)){
+			font-size: toRem(80);
+	 }
+	 @media (max-width: toEm(1280)){
+		font-size: toRem(40);
+		padding-top: toRem(30);
+		padding-bottom: toRem(30);
+ }
+ @media (max-width: toEm(767.98)){
+	  padding-top: toRem(40);
+	  padding-bottom: toRem(40);
+	  gap: toRem(10);
+ }
+	}
+}
+
+@keyframes text {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(-160%, 0);
+	}
+}
+
+//========================================================================================================================================================
+
+.reviews {
+	padding-top: toRem(160);
+	padding-bottom: toRem(148);
+	@media (max-width: toEm(1648)) {
+		padding-top: toRem(110);
+		padding-bottom: toRem(92);
+	}
+	@media (max-width: toEm(1280)) {
+		padding-top: toRem(76);
+		padding-bottom: toRem(74);
+	}
+	&__title {
+		text-transform: uppercase;
+		font-size: toRem(132);
+		position: relative;
+		left: -600px;
+		margin-bottom: toRem(151);
+		font-size: toRem(132);
+		@media (max-width: toEm(1648)) {
+			margin-bottom: toRem(104);
+			font-size: toRem(80);
+		}
+		@media (max-width: toEm(1280)) {
+			font-size: toRem(60);
+			margin-bottom: toRem(82);
+		}
+		@media (max-width: toEm(767.98)) {
+			font-size: toRem(36);
+			margin-bottom: toRem(40);
+		}
+		div {
+			display: flex;
+			align-items: center;
+			gap: toRem(80);
+			font-family: "FoundationSansOutline";
+			color: rgba(253, 254, 255, 9%);
+
+			span {
+				color: rgba(253, 254, 255, 100%);
+				font-family: "FoundationSansBlack";
+			}
+		}
+	}
+
+	&__container {
+	}
+
+	&__wrapper {
+	}
+
+	&__slider {
+		position: relative;
+	}
+
+	&__slide {
+	}
+}
+.reviews-slide__picture {
+	@media (max-width: toEm(767.98)) {
+		display: none;
+	}
+}
+.swiper {
+}
+
+.swiper-wrapper {
+}
+
+.swiper-slide {
+}
+
+.reviews-slide {
+	display: flex;
+	justify-content: space-between;
+	@media (max-width: toEm(1280)) {
+		flex-direction: column;
+		gap: toRem(62);
+	}
+	&__box {
+	}
+
+	&__info {
+		color: $lightColorOne;
+		text-align: justify;
+		line-height: 120%;
+		font-size: toRem(18);
+		text-transform: uppercase;
+		max-width: toRem(440);
+		@media (max-width: toEm(1648)) {
+			max-width: toRem(378);
+			font-size: 16px;
+		}
+		@media (max-width: toEm(1280)) {
+			min-width: 100%;
+		}
+		@media (max-width: toEm(575.98)) {
+			width: 100%;
+		}
+	}
+
+	.reviews-slide__info-text {
+		color: $darkColorOne;
+		display: flex;
+		flex-direction: column;
+		gap: toRem(20);
+		flex: 1 1 auto;
+		line-height: 120%;
+		font-size: toRem(16);
+		@media (max-width: toEm(1648)) {
+			font-size: toRem(14);
+		}
+	}
+
+	&__cart {
+		padding: toRem(10);
+		background-color: $mainColor;
+		display: flex;
+		max-width: toRem(882);
+		@media (max-width: toEm(1648)) {
+			max-width: toRem(768);
+		}
+
+		@media (min-width: toEm(767.98)) {
+			padding: toRem(20);
+		}
+	}
+
+	&__picture {
+		img {
+			width: toRem(422);
+			min-height: toRem(570);
+			object-fit: cover;
+			@media (max-width: toEm(1648)) {
+				width: toRem(350);
+				min-height: toRem(564);
+			}
+			@media (max-width: toEm(1280)) {
+				min-height: toRem(515);
+			}
+		}
+	}
+
+	&__body {
+		padding-left: toRem(20);
+		display: flex;
+		flex-direction: column;
+		@media (max-width: toEm(767.98)) {
+			padding-left: toRem(0);
+		}
+	}
+
+	&__name {
+		font-size: toRem(16);
+		text-transform: uppercase;
+		color: $grayColorTwo;
+		margin-bottom: toRem(26);
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: flex-end;
+		@media (max-width: toEm(767.98)) {
+			margin-top: toRem(40);
+		}
+	}
+
+	&__link {
+	}
+}
+.reviews__slider {
+	@media (max-width: toEm(1280)) {
+		padding-bottom: toRem(75);
+	}
+}
+.reviews-slider__nav {
+	position: absolute;
+	bottom: toRem(10);
+	left: toRem(11);
+	display: flex;
+	gap: toRem(23);
+	@media (max-width: toEm(1648)) {
+		bottom: 2px;
+		left: -2px;
+		gap: 7px;
+	}
+	@media (max-width: toEm(1280)) {
+		bottom: 0;
+		left: 50%;
+		gap: toRem(40);
+		transform: translateX(-50%);
+	}
+	@media (max-width: toEm(767.98)) {
+		bottom: 0;
+		gap: 59px;
+	}
+	button {
+		height: toRem(126);
+		width: toRem(126);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.4s;
+		@media (max-width: toEm(1648)) {
+			height: toRem(90);
+			width: toRem(90);
+		}
+		@media (max-width: toEm(1280)) {
+			width: toRem(60);
+			height: toRem(60);
+		}
+		@media (min-width: toEm(767.98)) {
+			background-color: $mainColor;
+			width: toRem(40);
+			height: toRem(40);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(0.95);
+			}
+		}
+		svg {
+			width: toRem(36);
+			object-fit: contain;
+
+			path {
+				stroke: $darkColorOne !important;
+				@media (max-width: toEm(565.98)) {
+					stroke: $whiteColor !important;
+				}
+			}
+		}
+	}
+}
+
+.reviews-button-prev {
+	svg {
+		transform: rotate(180deg);
+	}
+}
+
+.reviews-button-next {
+}
+
+.swiper-slide {
+	opacity: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+	@media (max-width: toEm(767.98)) {
+	}
+}
+
+.swiper-slide.swiper-slide-active {
+	opacity: 1 !important;
+	visibility: visible !important;
+	pointer-events: all !important;
+}
+
+.swiper {
+	overflow: visible !important;
+}
+
+//========================================================================================================================================================
+
+.hero {
+	// padding-top: toRem(363);
+	// position: relative;
+	// &::before{
+	// 	content:'';
+	// 	position: absolute;top: 0;left: 0;width: 100%;
+	// 	height: toRem(364);
+	// 	object-fit: cover;
+	// 	background: url('@img/hero/background-top_svg.svg');
+	// 	background-repeat: no-repeat;
+	// 	background-size: contain;
+	// 	background-position: center top;
+	// }
+	.hero__box {
+		padding-bottom: toRem(148);
+
+		background-color: $mainColor;
+		@media (max-width: toEm(1648)) {
+			padding-bottom: toRem(100);
+			padding-top: toRem(50);
+		}
+		@media (max-width: toEm(1280)) {
+			padding-top: toRem(20);
+			padding-bottom: toRem(60);
+		}
+	}
+
+	.hero__top-bg {
+		width: 100%;
+		object-fit: cover;
+		position: relative;
+		top: 4px;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 3;
+	}
+
+	&__wrapper {
+		display: flex;
+		color: $darkColorOne;
+		gap: toRem(151);
+		@media (max-width: toEm(1648)) {
+			flex-direction: column;
+			gap: toRem(80);
+		}
+		@media (max-width: toEm(1280)) {
+			gap: toRem(40);
+		}
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+
+		@media (min-width: toEm(1648)) {
+			flex: 0 0 toRem(604);
+			align-items: flex-start;
+		}
+		@media (max-width: toEm(1648)) {
+			justify-content: center;
+			text-align: center;
+			h2 {
+				text-align: center;
+				max-width: toRem(960);
+				margin: 0 auto;
+			}
+			a {
+				margin: 20px auto 0 auto;
+			}
+		}
+		@media (max-width: toEm(1280)) {
+			a {
+				margin: 20px auto 0 0;
+			}
+		}
+	}
+
+	&__right {
+		flex: 1 1 auto;
+		gap: toRem(151);
+		@media (max-width: toEm(1648)) {
+			display: flex;
+			justify-content: space-around;
+		}
+		@media (max-width: toEm(1280)) {
+			flex-wrap: wrap;
+			gap: toRem(20);
+		}
+	}
+}
+
+.left-hero {
+	&__title {
+		flex: 1 1 auto;
+		font-family: "FoundationSansBlack";
+		text-align: justify;
+		margin-bottom: toRem(119);
+		text-transform: uppercase;
+		letter-spacing: -4px;
+		font-size: toRem(77);
+		@media (max-width: toEm(1648)) {
+			font-size: toRem(60);
+		}
+		@media (max-width: toEm(1280)) {
+			font-size: toRem(60);
+			text-align: left !important;
+			margin-bottom: toRem(32);
+		}
+		@media (max-width: toEm(767.98)) {
+			font-size: toRem(36);
+		}
+	}
+
+	&__link {
+		padding-left: toRem(45) !important;
+		width: auto !important;
+
+		.button__text {
+			flex: none !important;
+		}
+	}
+}
+
+.button {
+	&__text {
+	}
+
+	&__arrow {
+	}
+}
+
+.right-hero {
+	&__item {
+	}
+}
+
+.item-right-hero {
+	display: flex;
+	align-items: center;
+	@media (max-width: toEm(1648)) {
+		flex-direction: column;
+	}
+	@media (max-width: toEm(1280)) {
+		flex-direction: row;
+		margin-right: auto;
+	}
+	@media (max-width: toEm(767.98)) {
+		flex-direction: column;
+	}
+	&__picture {
+		@media (max-width: toEm(1280)) {
+			flex: 0 0 toRem(300);
+		}
+		img {
+			width: toRem(444);
+			height: toRem(444);
+			object-fit: cover;
+			@media (max-width: toEm(1280)) {
+				width: toRem(300);
+				height: toRem(300);
+			}
+		}
+		&._circle {
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	}
+
+	&__info {
+		margin: 100px;
+		text-align: justify;
+		font-size: toRem(18);
+		line-height: math.div(19.8, 18);
+		width: toRem(244);
+		@media (max-width: toEm(1648)) {
+			font-size: toRem(16);
+		}
+		@media (max-width: toEm(1280)) {
+			margin: toRem(40);
+			flex: 1 1 auto;
+			width: 100%;
+		}
+		@media (max-width: toEm(767.98)) {
+			margin: toRem(0) toRem(0) toRem(0) toRem(0);
+			&:last-child {
+				margin-top: toRem(20);
+			}
+		}
+	}
+}
+.item-right-hero_two {
+	flex-direction: column-reverse !important;
+	gap: toRem(20);
+}
+._link-hover-l,
+._link-hover-xxl {
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 0;
+		transition: all 0.4s;
+		background-color: $lightColorTwo;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: $lightColorTwo;
+			&::before {
+				content: "";
+				width: 100%;
+			}
+		}
+	}
+}
+
+._link-hover-xxl {
+	&::before {
+		height: toRem(4);
+	}
+}
+._link-hover-l {
+	&::before {
+		height: toRem(1);
+		bottom: toRem(-2);
+	}
+}
+._link-hover-m a {
+	transition: all 0.4s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $whiteColor;
+			transform: translateY(toRem(-4));
+		}
+	}
+}
+
+._link-hover-s {
+	position: relative;
+	svg {
+		transition: all 0.4s;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			span {
+				text-decoration: none;
+			}
+			svg {
+				transform: translateX(-10px);
+			}
+		}
+	}
+}
+
+.touch {
+	.options-home__body {
+		min-height: auto;
+	}
+	.options-home .options-home__item-box {
+		@media (max-width: toEm(767.98)) {
+			width: toRem(360);
+			a {
+				display: block;
+			}
+		}
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+	.options-home__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(60);
+		justify-content: center;
+		@media (max-width: toEm(656.97)) {
+			gap: toRem(64);
+		}
+	}
+	.home-page__options {
+		padding-bottom: 102px;
+	}
+	.top-options-home {
+		margin-bottom: 98px;
+		@media (max-width: toEm(767.98)) {
+			margin-bottom: toRem(36);
+		}
+	}
+	.options-home__item {
+		@media (max-width: toEm(767.98)) {
+			transform: none;
+		}
+	}
+	.item-options-home__picture {
+		@media (max-width: toEm(767.98)) {
+			height: toRem(314);
+			width: 100%;
+		}
+	}
+	.controls {
+		@media (max-width: toEm(767.98)) {
+			.controls__fs,
+			.controls__stop {
+				display: none;
+			}
+		}
+	}
+}

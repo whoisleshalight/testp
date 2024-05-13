@@ -1,0 +1,99 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	padding: 0px 0px;
+	@include adaptiveValue("min-height", 72, 52, 0, 1648, 1280);
+	border: 1px solid transparent;
+	@include adaptiveValue("font-size", 18, 14, 0, 1648, 1280);
+	border-radius: toRem(110);
+	text-transform: uppercase;
+	padding-right: toRem(10);
+	text-align: center;
+	width: 100%;
+	padding-left: toRem(80);
+	font-family: "FoundationSansBlack";
+	@media (max-width: toEm(1280)) {
+		@include adaptiveValue("min-height", 52, 60, 0, 1280, 480);
+	}
+	@media (max-width: toEm(575.98)) {
+		padding-left: toRem(40);
+		min-height: toRem(55);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			.button__arrow svg {
+				transform: rotate(0);
+			}
+		}
+	}
+	.button__text {
+		white-space: nowrap;
+		padding-right: toRem(18);
+		flex: 1 1 auto;
+	}
+
+	.button__arrow {
+		@include adaptiveValue("width", 52, 32, 0, 1648, 1280);
+		@include adaptiveValue("height", 52, 32, 0, 1648, 1280);
+		// flex: 0 0 toRem(52);
+		background-color: $darkColorOne;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		svg {
+			transition: all 0.4s;
+			transition: all 0.4s;
+			transform: rotate(45deg);
+			@include adaptiveValue("width", 18, 10, 0, 1648, 1280);
+			@include adaptiveValue("height", 18, 10, 0, 1648, 1280);
+
+			path {
+				stroke: $mainColor;
+			}
+		}
+	}
+
+	&._light {
+		background-color: $mainColor;
+		color: $darkColorOne;
+	}
+	&._dark {
+		background-color: $darkColorOne;
+		color: $mainColor;
+		.button__arrow {
+			background-color: $mainColor !important;
+			svg {
+				path {
+					stroke: $darkColorOne;
+				}
+			}
+		}
+	}
+	@media (any-hover: hover) {
+		&:hover {
+		}
+	}
+
+	&--fw {
+		width: 100%;
+	}
+}
+
+._link {
+	display: flex;
+	align-items: center;
+	gap: toRem(20);
+
+	span {
+		color: $darkColorOne;
+		@include adaptiveValue("font-size", 18, 14, 0, 1648, 1280);
+		font-family: "FoundationSansBlack";
+		text-decoration: underline;
+		text-transform: uppercase;
+	}
+}
