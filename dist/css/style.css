@@ -2152,7 +2152,13 @@ html.has-scroll-dragging {
     transform: scale(1)
   }
   .cart__title {
-    margin-bottom: 2.375rem
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    letter-spacing: normal;
+    line-height: 120%
+  }
+  .cart__title br {
+    display: none
   }
   .cart__info {
     font-size: 1rem

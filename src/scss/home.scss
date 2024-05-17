@@ -781,7 +781,12 @@
 		flex: 1 1 auto;
 
 		@media (max-width: toEm(1280)) {
-			margin-bottom: toRem(38);
+			margin-bottom: toRem(20);
+			font-size: toRem(16);	
+		letter-spacing: normal;line-height: 120%;
+			br{
+				display: none;
+			}
 		}
 	}
 
