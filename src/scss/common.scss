@@ -99,6 +99,9 @@
 		@media (max-width: toEm(1280)) {
 			padding-bottom: toRem(64) !important;
 		}
+		@media (max-width: toEm(767.98)) {
+			padding-bottom: toRem(100) !important;
+		}
 	}
 
 	&__info {
@@ -206,9 +209,7 @@
 			padding-bottom: toRem(30);
 		}
 		@media (max-width: toEm(767.98)) {
-			padding-top: toRem(40);
-			padding-bottom: toRem(40);
-			gap: toRem(10);
+			display: none;
 		}
 	}
 }

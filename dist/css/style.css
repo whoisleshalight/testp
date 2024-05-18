@@ -2273,6 +2273,9 @@ html.has-scroll-dragging {
     opacity: 0;
     visibility: hidden
   }
+  .loader__container {
+    padding-bottom: 6.25rem!important
+  }
   .loader__info {
     font-size: 1rem;
     margin-bottom: 0;
@@ -2288,9 +2291,7 @@ html.has-scroll-dragging {
     gap: 1.25rem
   }
   .loader__line {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    gap: .625rem
+    display: none
   }
   .reviews__title {
     font-size: 2.25rem;
