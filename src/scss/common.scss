@@ -419,7 +419,7 @@
 	}
 	@media (max-width: toEm(767.98)) {
 		bottom: 0;
-		gap: 59px;
+		gap: toRem(80);
 	}
 	button {
 		height: toRem(126);

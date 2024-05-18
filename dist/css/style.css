@@ -2309,7 +2309,7 @@ html.has-scroll-dragging {
   }
   .reviews-slider__nav {
     bottom: 0;
-    gap: 59px
+    gap: 5rem
   }
   .reviews-slider__nav button {
     width: 2.5rem;
