@@ -5712,8 +5712,7 @@ object-assign
                 trigger: ".options-home__body",
                 start: "0% 40%",
                 end: "80% 100%",
-                scrub: 1.6,
-                markers: true
+                scrub: 1.6
             }
         });
         tl.from("._item-01", {

@@ -85,7 +85,7 @@ function homeOptionsAnimationInit() {
 			start: "0% 40%", // when the top of the trigger hits the top of the viewport
 		end:'80% 100%',
 		scrub: 1.6,
-		markers: true,
+		// markers: true,
 		//   pin: true,
 		}
 	});
