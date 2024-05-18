@@ -27,6 +27,10 @@ let paralaxSlider = true;
 if(window.innerWidth<=767.98){
 	paralaxSlider = false;
 }
+let sliderEffect = "fade";
+if(window.innerWidth<=767.98){
+	sliderEffect = "slide";
+}
 // Ініціалізація слайдерів
 function initSliders() {
 	// Список слайдерів
@@ -40,10 +44,10 @@ function initSliders() {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
-			spaceBetween: 0,
+			spaceBetween: 30,
 			autoHeight: true,
 			speed: 800,
-			effect: 'fade',
+			effect: sliderEffect,
 			parallax:paralaxSlider,
 			//touchRatio: 0,
 			//simulateTouch: false,

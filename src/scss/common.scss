@@ -470,9 +470,10 @@
 
 .reviews-button-next {
 }
-
+// @media (min-width: toEm(767.98)) {
 .swiper-slide {
 	opacity: 0 !important;
+	transition: all 0.5s;
 	visibility: hidden !important;
 	pointer-events: none !important;
 	@media (max-width: toEm(767.98)) {
@@ -488,7 +489,12 @@
 .swiper {
 	overflow: visible !important;
 }
-
+// }
+@media (max-width: toEm(767.98)) {
+	.swiper {
+		overflow: visible !important;
+	}
+}
 //========================================================================================================================================================
 
 .hero {

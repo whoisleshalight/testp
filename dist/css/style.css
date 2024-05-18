@@ -643,6 +643,7 @@ html.has-scroll-dragging {
 }
 .swiper-slide {
   opacity: 0!important;
+  transition: all .5s;
   visibility: hidden!important;
   pointer-events: none!important
 }
@@ -1645,7 +1646,7 @@ html.has-scroll-dragging {
     margin-top: -5.75rem
   }
   .video__wrapper #homeVideo {
-    height: 42.5rem!important
+    height: 42.5rem
   }
   .controls__item {
     padding-right: 1.125rem
@@ -2313,6 +2314,9 @@ html.has-scroll-dragging {
   .reviews-slider__nav button {
     width: 2.5rem;
     height: 2.5rem
+  }
+  .swiper {
+    overflow: visible!important
   }
   .left-hero__title {
     font-size: 2.25rem

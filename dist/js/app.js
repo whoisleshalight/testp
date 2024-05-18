@@ -3600,16 +3600,18 @@
     }
     let paralaxSlider = true;
     if (window.innerWidth <= 767.98) paralaxSlider = false;
+    let sliderEffect = "fade";
+    if (window.innerWidth <= 767.98) sliderEffect = "slide";
     function initSliders() {
         if (document.querySelector(".swiper")) new Swiper(".reviews__slider", {
             modules: [ Navigation, EffectFade, Parallax ],
             observer: true,
             observeParents: true,
             slidesPerView: 1,
-            spaceBetween: 0,
+            spaceBetween: 30,
             autoHeight: true,
             speed: 800,
-            effect: "fade",
+            effect: sliderEffect,
             parallax: paralaxSlider,
             navigation: {
                 prevEl: ".reviews-button-prev",
