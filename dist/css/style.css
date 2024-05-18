@@ -542,7 +542,7 @@ html.has-scroll-dragging {
 }
 .reviews {
   padding-top: 10rem;
-  padding-bottom: 9.25rem
+  padding-bottom: 8.125rem
 }
 .reviews__title {
   text-transform: uppercase;
@@ -616,7 +616,7 @@ html.has-scroll-dragging {
 }
 .reviews-slider__nav {
   position: absolute;
-  bottom: .625rem;
+  bottom: 1.75rem;
   left: .6875rem;
   display: flex;
   gap: 1.4375rem
@@ -1409,9 +1409,7 @@ html.has-scroll-dragging {
     padding: 1.25rem
   }
   .reviews-slider__nav button {
-    background-color: #fdfeff;
-    width: 2.5rem;
-    height: 2.5rem
+    background-color: #fdfeff
   }
 }
 @media (min-width:80em) {
@@ -2192,15 +2190,15 @@ html.has-scroll-dragging {
   .reviews__title div {
     gap: 1.25rem!important;
     position: relative;
-    -webkit-animation: marquee 15s linear infinite;
-    animation: marquee 15s linear infinite
+    -webkit-animation: marquee 240s linear infinite;
+    animation: marquee 240s linear infinite
   }
   @-webkit-keyframes marquee {
     0% {
       left: 0
     }
     50% {
-      left: -40%
+      left: -400%
     }
     100% {
       left: 0
@@ -2211,7 +2209,7 @@ html.has-scroll-dragging {
       left: 0
     }
     50% {
-      left: -40%
+      left: -400%
     }
     100% {
       left: 0
@@ -2311,6 +2309,10 @@ html.has-scroll-dragging {
     bottom: 0;
     gap: 59px
   }
+  .reviews-slider__nav button {
+    width: 2.5rem;
+    height: 2.5rem
+  }
   .left-hero__title {
     font-size: 2.25rem
   }
@@ -2380,6 +2382,9 @@ html.has-scroll-dragging {
   }
   .video__wrapper #homeVideo {
     height: 48.75rem
+  }
+  .video__controls {
+    display: none
   }
   .controls__item {
     padding-left: 1.875rem;

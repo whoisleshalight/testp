@@ -35,9 +35,6 @@ function loaded() {
 	setTimeout(() => {
 		document.documentElement.classList.add('loaded');
 	}, 300);
-	setTimeout(() => {
-		document.querySelector('.loader').remove();
-	}, 3000);
 }
 
 
@@ -118,45 +115,52 @@ function homeOptionsAnimationInit() {
 
 document.addEventListener("DOMContentLoaded", () => {
 	const videoWrapper = document.querySelector('#videoWrapper');
-	if(videoWrapper){
-		const homeVideo = videoWrapper.querySelector('#homeVideo');
-		const playBtn = videoWrapper.querySelector('.controls__play')
-		const stopBtn = videoWrapper.querySelector('.controls__stop')
-		const fullscreenBtn = videoWrapper.querySelector('.controls__fs'); // Новая кнопка для полноэкранного режима
+		if(videoWrapper){
+			const homeVideo = videoWrapper.querySelector('#homeVideo');
 
-		playBtn.addEventListener("click", function (e) {
-			if(videoWrapper.classList.contains('_stop-video')){
-				videoWrapper.classList.remove('_stop-video')
-				videoWrapper.classList.add('_play-video');
-				document.querySelector('.home-page__video').classList.add('_bg-none')
-				homeVideo.play();
-			}else if(!videoWrapper.classList.contains('_stop-video')){
-				videoWrapper.classList.add('_play-video');
-				homeVideo.play();
-				document.querySelector('.home-page__video').classList.add('_bg-none')
+				if(window.innerWidth>=767.98){
+					const playBtn = videoWrapper.querySelector('.controls__play')
+					const stopBtn = videoWrapper.querySelector('.controls__stop')
+					const fullscreenBtn = videoWrapper.querySelector('.controls__fs'); // Новая кнопка для полноэкранного режима
+			
+					playBtn.addEventListener("click", function (e) {
+						if(videoWrapper.classList.contains('_stop-video')){
+							videoWrapper.classList.remove('_stop-video')
+							videoWrapper.classList.add('_play-video');
+							document.querySelector('.home-page__video').classList.add('_bg-none')
+							homeVideo.play();
+						}else if(!videoWrapper.classList.contains('_stop-video')){
+							videoWrapper.classList.add('_play-video');
+							homeVideo.play();
+							document.querySelector('.home-page__video').classList.add('_bg-none')
+			
+						}
+					});
+					stopBtn.addEventListener("click", function (e) {
+						if(videoWrapper.classList.contains('_play-video')){
+							videoWrapper.classList.remove('_play-video')
+							videoWrapper.classList.add('_stop-video');
+							homeVideo.pause();
+							document.querySelector('.home-page__video').classList.remove('_bg-none')
+			
+						}
+					});
+					fullscreenBtn.addEventListener("click", function (e) {
+						if (homeVideo.requestFullscreen) {
+							homeVideo.requestFullscreen();
+						} else if (homeVideo.webkitRequestFullscreen) { /* Safari */
+							homeVideo.webkitRequestFullscreen();
+						} else if (homeVideo.msRequestFullscreen) { /* IE11 */
+							homeVideo.msRequestFullscreen();
+						}
+				});
+	
+				}else{
+					homeVideo.setAttribute('controls', 'controls');
 
-			}
-		});
-		stopBtn.addEventListener("click", function (e) {
-			if(videoWrapper.classList.contains('_play-video')){
-				videoWrapper.classList.remove('_play-video')
-				videoWrapper.classList.add('_stop-video');
-				homeVideo.pause();
-				document.querySelector('.home-page__video').classList.remove('_bg-none')
-
-			}
-		});
-		fullscreenBtn.addEventListener("click", function (e) {
-			if (homeVideo.requestFullscreen) {
-				 homeVideo.requestFullscreen();
-			} else if (homeVideo.webkitRequestFullscreen) { /* Safari */
-				 homeVideo.webkitRequestFullscreen();
-			} else if (homeVideo.msRequestFullscreen) { /* IE11 */
-				 homeVideo.msRequestFullscreen();
-			}
-	  });
-
+				}
 	}
+	
 
 	
 });

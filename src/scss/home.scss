@@ -284,6 +284,9 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		@media (max-width: toEm(767.98)) {
+			display: none;
+		}
 	}
 }
 
@@ -782,9 +785,10 @@
 
 		@media (max-width: toEm(1280)) {
 			margin-bottom: toRem(20);
-			font-size: toRem(16);	
-		letter-spacing: normal;line-height: 120%;
-			br{
+			font-size: toRem(16);
+			letter-spacing: normal;
+			line-height: 120%;
+			br {
 				display: none;
 			}
 		}

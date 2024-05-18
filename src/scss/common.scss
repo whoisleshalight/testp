@@ -54,25 +54,24 @@
 }
 .loader {
 	pointer-events: none;
-@media (min-width:toEm(767.98)){
-	transition: top ease-in-out 0.4s 0.6s;
-
-}
-@media (max-width: toEm(767.98)){
-	  transition: all 0.4s;
-}
+	@media (min-width: toEm(767.98)) {
+		transition: top ease-in-out 0.4s 0.6s;
+	}
+	@media (max-width: toEm(767.98)) {
+		transition: all 0.4s;
+	}
 	.loaded & {
-		@media (min-width:toEm(767.98)){
+		@media (min-width: toEm(767.98)) {
 			top: -100%;
 			.loader__line {
 				transform: translateY(100%);
 				opacity: 0;
 			}
 		}
-		@media (max-width: toEm(767.98)){
-			  opacity: 0;visibility: hidden;
+		@media (max-width: toEm(767.98)) {
+			opacity: 0;
+			visibility: hidden;
 		}
-		
 	}
 
 	font-family: "FoundationSansBlack";
@@ -94,12 +93,12 @@
 		padding-bottom: toRem(115);
 		justify-content: space-between;
 		width: 100%;
-		@media (max-width: toEm(1920)){
+		@media (max-width: toEm(1920)) {
 			padding-bottom: toRem(33);
-	 }
-	 @media (max-width: toEm(1280)){
-		padding-bottom: toRem(64) !important;
-	}
+		}
+		@media (max-width: toEm(1280)) {
+			padding-bottom: toRem(64) !important;
+		}
 	}
 
 	&__info {
@@ -122,31 +121,34 @@
 			height: 2px;
 			background-color: $lightColorThree;
 		}
-		@media (max-width: toEm(1920)){
+		@media (max-width: toEm(1920)) {
 			font-size: toRem(30);
 			margin-bottom: toRem(20);
-	 }
-	 @media (max-width: toEm(1280)){
-		font-size: toRem(20);padding-bottom: toRem(20);margin-bottom: toRem(6);
-	 }
-	 @media (max-width: toEm(767.98)){
-		font-size: toRem(16);margin-bottom: toRem(0);
-		padding-bottom: toRem(10);
-  }
+		}
+		@media (max-width: toEm(1280)) {
+			font-size: toRem(20);
+			padding-bottom: toRem(20);
+			margin-bottom: toRem(6);
+		}
+		@media (max-width: toEm(767.98)) {
+			font-size: toRem(16);
+			margin-bottom: toRem(0);
+			padding-bottom: toRem(10);
+		}
 	}
 
 	&__counter {
 		font-weight: 900;
 		font-size: toRem(190);
-		@media (max-width: toEm(1920)){
-			  font-size: toRem(120);
+		@media (max-width: toEm(1920)) {
+			font-size: toRem(120);
 		}
-		@media (max-width: toEm(1280)){
-			  font-size: toRem(60);
+		@media (max-width: toEm(1280)) {
+			font-size: toRem(60);
 		}
-		@media (max-width: toEm(767.98)){
+		@media (max-width: toEm(767.98)) {
 			font-size: toRem(40);
-	  }
+		}
 	}
 
 	&__line {
@@ -176,9 +178,9 @@
 				// &:first-child {
 				position: relative;
 				padding-right: toRem(60);
-					@media (max-width: toEm(767.98)){
-						  padding-right: toRem(30);
-					}
+				@media (max-width: toEm(767.98)) {
+					padding-right: toRem(30);
+				}
 				&::after {
 					content: "";
 					position: absolute;
@@ -191,23 +193,23 @@
 
 				// }
 			}
-			@media (max-width: toEm(767.98)){
-				  gap: toRem(20);
+			@media (max-width: toEm(767.98)) {
+				gap: toRem(20);
 			}
 		}
-		@media (max-width: toEm(1920)){
+		@media (max-width: toEm(1920)) {
 			font-size: toRem(80);
-	 }
-	 @media (max-width: toEm(1280)){
-		font-size: toRem(40);
-		padding-top: toRem(30);
-		padding-bottom: toRem(30);
- }
- @media (max-width: toEm(767.98)){
-	  padding-top: toRem(40);
-	  padding-bottom: toRem(40);
-	  gap: toRem(10);
- }
+		}
+		@media (max-width: toEm(1280)) {
+			font-size: toRem(40);
+			padding-top: toRem(30);
+			padding-bottom: toRem(30);
+		}
+		@media (max-width: toEm(767.98)) {
+			padding-top: toRem(40);
+			padding-bottom: toRem(40);
+			gap: toRem(10);
+		}
 	}
 }
 
@@ -225,7 +227,7 @@
 
 .reviews {
 	padding-top: toRem(160);
-	padding-bottom: toRem(148);
+	padding-bottom: toRem(130);
 	@media (max-width: toEm(1648)) {
 		padding-top: toRem(110);
 		padding-bottom: toRem(92);
@@ -399,7 +401,7 @@
 }
 .reviews-slider__nav {
 	position: absolute;
-	bottom: toRem(10);
+	bottom: toRem(28);
 	left: toRem(11);
 	display: flex;
 	gap: toRem(23);
@@ -435,6 +437,8 @@
 		}
 		@media (min-width: toEm(767.98)) {
 			background-color: $mainColor;
+		}
+		@media (max-width: toEm(767.98)) {
 			width: toRem(40);
 			height: toRem(40);
 		}

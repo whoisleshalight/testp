@@ -188,20 +188,22 @@ body {
 // Підключення стилів окремих сторінок
 @import "home";
 
-
-
- @media (max-width: toEm(1280)){
-	.reviews__title div {	
+@media (max-width: toEm(1280)) {
+	.reviews__title div {
 		gap: toRem(20) !important;
-		position: relative; 
-		animation: marquee 15s linear infinite;
-	 }
-	 
-	
-	 @keyframes marquee {
-		0% { left: 0; }
-		50% { left: -40%; }
-		100% { left: 0; }
-	 }
-	 
- }
+		position: relative;
+		animation: marquee 240s linear infinite;
+	}
+
+	@keyframes marquee {
+		0% {
+			left: 0;
+		}
+		50% {
+			left: -400%;
+		}
+		100% {
+			left: 0;
+		}
+	}
+}
